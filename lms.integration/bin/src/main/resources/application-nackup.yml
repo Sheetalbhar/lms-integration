@@ -1,0 +1,14 @@
+server:
+  port: 4200
+aws:
+  accessKeyId: AKIA4GF27WGCJOID55N2
+  secretAccessKey: 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
+  senderEmail: sheetal.bharara@trangile.com
+  emailSubject: password reset successfully
+  ses:
+    endpoint: email-smtp.ap-southeast-1.amazonaws.com
+  user:
+    pool:
+      staffHqUser: ap-southeast-1_8YzL1Rzcj
+      partnerUser: ap-southeast-1_Lxsvt6Eyt
+      consumerUser: ap-southeast-1_BKZuoGRyo

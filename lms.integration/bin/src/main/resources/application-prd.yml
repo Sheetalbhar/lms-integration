@@ -1,0 +1,59 @@
+spring:
+  redis:
+    host: prod-sso-sg-redis.gun2jn.ng.0001.apse1.cache.amazonaws.com
+    port: 6379
+    expiretime: 36000
+    password: null
+    database: 1
+  activemq:
+    user: admin
+    password: Plaza1234567
+    broker-url: ssl://b-2c9f535a-c990-467d-9aaf-b7a2b4c26862-1.mq.ap-southeast-1.amazonaws.com:61617
+  datasource:
+    druid:
+      url: jdbc:mysql://prod-sso-rds.cluster-chsdmgh9ts43.ap-southeast-1.rds.amazonaws.com:3306/sso?useSSL=false&allowMultiQueries=true&useUnicode=yes&characterEncoding=UTF-8
+      username: sdba
+      password: JmM$2VbEjYcnq#yL
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      test-on-borrow: true
+      test-on-return: false
+      test-while-idle: true
+      validation-query: SELECT 1 FROM DUAL
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      filter:
+        wall:
+          enabled: false
+        stat:
+          enabled: false
+  thymeleaf:
+    prefix: classpath:/templates/
+    resources: classpath:/
+    check-template-location: true
+    cache: true
+    suffix: .html
+    encoding: utf-8
+    context-path: classpath:/
+    servlet:
+      content-type: text/html
+sa-token:
+  token-name: access_token
+  oauth2:
+    is-code: true
+    is-implicit: true
+    is-password: true
+    is-client: true
+    access-token-timeout: 36000
+  timeout: 36000
+aws:
+  accessKeyId: AKIA4GF27WGCJOID55N2
+  secretAccessKey: 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
+  senderEmail: noreply@plaza-network.com
+  emailSubject: password reset successfully
+  ses:
+    endpoint: email-smtp.ap-southeast-1.amazonaws.com
+  user:
+    pool:
+      staffHqUser: ap-southeast-1_8YzL1Rzcj
+      partnerUser: ap-southeast-1_Lxsvt6Eyt
+      consumerUser: ap-southeast-1_BKZuoGRyo

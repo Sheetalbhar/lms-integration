@@ -1,0 +1,58 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    expiretime: 36000
+    database: 1
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3308/sso?useSSL=false&allowMultiQueries=true&useUnicode=yes&characterEncoding=UTF-8
+      username: sso
+      password: AThDaWEY24MFBs6HN5tK3xrcpG1PZu
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      test-on-borrow: true
+      test-on-return: false
+      test-while-idle: true
+      validation-query: SELECT 1 FROM DUAL
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      filter:
+        wall:
+          enabled: false
+        stat:
+          enabled: false
+  thymeleaf:
+    prefix: classpath:/templates/
+    resources: classpath:/
+    check-template-location: true
+    cache: true
+    suffix: .html
+    encoding: utf-8
+    context-path: classpath:/
+    servlet:
+      content-type: text/html
+
+sa-token:
+  # token?? (????cookie??)
+  token-name: access_token
+  # OAuth2.0 ??
+  oauth2:
+    is-code: true
+    is-implicit: true
+    is-password: true
+    is-client: true
+    access-token-timeout: 7200
+  timeout: 7200
+
+aws:
+  accessKeyId: AKIAXH6JZE2Q5PCRYH5Q
+  secretAccessKey: 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
+  senderEmail: noreply@plaza-network.com
+  emailSubject: password reset successfully
+  ses:
+    endpoint: email-smtp.ap-southeast-1.amazonaws.com
+  user:
+    pool:
+      staffHqUser: ap-southeast-1_5ARD744B3
+      partnerUser: ap-southeast-1_o3KstaJqK
+      consumerUser: ap-southeast-1_ZdeYOb5ox
