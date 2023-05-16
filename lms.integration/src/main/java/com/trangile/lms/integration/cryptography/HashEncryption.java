@@ -3,9 +3,16 @@ package com.trangile.lms.integration.cryptography;
 import java.security.Key;
 import java.util.stream.Stream;
 
+import javax.crypto.Cipher;
+
 
 public class HashEncryption implements IEncryption {
 //	HashAlgorithm hashAlgorithm;
+	//HashAlgorithm hashAlgorithm = new HashAlgorithm();
+	 private Cipher cipher;
+	    String encodedStr;
+	    String decodedStr;
+
    
 	public HashEncryption(HashType hashType)
     {
@@ -36,14 +43,52 @@ public class HashEncryption implements IEncryption {
 
 	@Override
 	public String Encrypt(String data, Key[] keys) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			if(keys !=null && keys.length>0) {
+				if(keys.length == 1) {
+					 byte[] dataInBytes = data.getBytes();
+				        cipher = Cipher.getInstance("DES/CBC/NoPadding");
+				        cipher.init(Cipher.ENCRYPT_MODE, keys[0]);
+				        byte[] encryptedBytes = cipher.doFinal(dataInBytes);
+				        encodedStr = encode(encryptedBytes);
+				       	
+				}
+//				else {
+//					//if keys array have more data
+//					// encryptionCipher.init(Cipher.ENCRYPT_MODE, keys[0]);
+//				}
+			}
+			 return encodedStr;
+			
+		}catch(Exception e) {
+			System.out.println("Exception "+e.getMessage());
+			return null;	
+		}
 	}
 
 	@Override
 	public String Decrypt(String code, Key[] keys) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			if(keys !=null && keys.length>0) {
+				if(keys.length == 1) {
+					byte[] dataInBytes = code.getBytes();
+			        cipher = Cipher.getInstance("AES/GCM/NoPadding");
+			        cipher.init(Cipher.DECRYPT_MODE, keys[0]);
+			        byte[] decryptedBytes = cipher.doFinal(dataInBytes);
+			        decodedStr = decode(decryptedBytes);
+				}
+//				else {
+//					//if keys array have more data
+//					// encryptionCipher.init(Cipher.ENCRYPT_MODE, keys[0]);
+//				}
+				}
+			return decodedStr;
+			
+			
+		}catch (Exception e) {
+			System.out.println("Exception "+e.getMessage());
+			return null;
+		}
 	}
 
 	@Override
