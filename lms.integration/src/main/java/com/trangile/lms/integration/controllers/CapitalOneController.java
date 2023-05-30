@@ -30,7 +30,7 @@ public class CapitalOneController {
 	
 	
 	
-	@GetMapping("/capitalOne/verify")
+	@PostMapping("/capitalOne/verify")
 	public Object verifyRequest(@RequestParam(value = "cardNo", required = false) String cardNo,
 			@RequestParam(value = "locationID", required = false) String locationID) {
 		VerifyRequest verifyRequest = new VerifyRequest();
