@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CognitoApplicationRunner implements ApplicationRunner{
+
 	@Value("${aws.accessKeyId}")
     String accessKeyId;
     @Value("${aws.secretAccessKey}")

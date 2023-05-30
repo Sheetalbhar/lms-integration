@@ -1,0 +1,78 @@
+[{
+		"ServiceCode": "EGate",
+		"SettingType": "Config",
+		"SettingValue": "{\"ApiKey\":\"E75Fd5eeOlD38zTThrjy1Q0WlzOslzyX\",\"Source\":\"MAS\",\"GetLiveReportUrl\":\"/Gate/GetLiveReport\",\"RegisterCustomerUrl\":\"/Gate/RegisterCustomer\",\"GetReportUrl\":\"/Gate/GetReport\"}"
+	},{
+		"ServiceCode": "CMBCard",
+		"SettingType": "Config",
+		"SettingValue": "{\"ShenzhenUrl\":\"http://172.16.102.43:8081/CRN4/json\", \"ShanghaiUrl\":\"http://172.16.102.44:8081/CRN4/json\",\"EtyMod\":\"022\"}"
+	},{
+		"ServiceCode": "CMBCode",
+		"SettingType": "Config",
+		"SettingValue": "{\"ShenzhenUrl\":\"http://172.16.102.43:8081/CRN4/json\", \"ShanghaiUrl\":\"http://172.16.102.44:8081/CRN4/json\",\"EtyMod\":\"022\"}"
+	},{
+		"ServiceCode": "UnionPay",
+		"SettingType": "Config",
+		"SettingValue": "{\"JavaJarPath\":\"D:\\\\Websites\\\\WASAPP\\\\ThirdPartyAPI\\\\bin\\\\lib\\\\upi-jose-0.0.1-SNAPSHOT.jar\",\"JarConfigPath\":\"D:\\\\Websites\\\\WASAPP\\\\ThirdPartyAPI\\\\bin\\\\lib\\\\config.properties\",\"JavaRunPath\":\"C:\\\\Program Files\\\\Java\\\\jre1.8.0_251\\\\bin\\\\java.exe\",\"RequestAddress\":\"https://apigatewaytest.unionpayintl.com\",\"MerchantID\":\"1262862564\",\"StoreID\":\"1262862964\",\"IndustryIIN\":\"900090000012\",\"Verify\":\"/ubrp/iis/v1.0/partner/benefit/write-off\",\"Void\":\"/ubrp/iis/v1.0/partner/benefit/revoke\",\"Inquiry\":\"/ubrp/iis/v1.0/partner/benefit/result-inquiry\"}"
+	},{
+		"ServiceCode": "CITS",
+		"SettingType": "Config",
+		"SettingValue": "{\"AppNo\":\"hycs\",\"AppKey\":\"hycs1234\",\"AppSecret\":\"B3FB028B563ECC417D8AA78003E6077F\",\"StoreCode\":\"1435014\",\"Channel\":\"01\",\"SyncCouCheckInfo\":1,\"GetAccessTokenUrl\":\"https://apapitest.citsmice.com.cn/api/api/auth/getAccessToken\",\"ServeIsCanUseUrl\":\"https://apapitest.citsmice.com.cn/outapi/store_serve/serveIsCanUse\",\"UseServeUrl\":\"https://apapitest.citsmice.com.cn/outapi/store_serve/useServe\",\"SyncCouCheckInfoUrl\":\"https://apapitest.citsmice.com.cn/outapi/store_serve/syncCouCheckInfo\"}  "
+	},{
+		"ServiceCode": "ChinaMobileHongKong",
+		"SettingType": "Config",
+		"SettingValue": "{\"RequestUrl\":\"https://api-cg-uat.hk.chinamobile.com/SubmitService\"}"
+	},{
+		"ServiceCode": "AmexGlobal",
+		"SettingType": "Config",
+		"SettingValue": "{\"ApiKey\":\"Xf3G6Hqsnf3K1xy559L1yabuT8QKAKEY\",\"Secret\":\"BnKbzT5xA6hw1GCDdl7UUW7UT63F8bDE\",\"CertificatePath\":\"D:\\\\Projects\\\\AmexGlobalBenefit\\certificates\\\\amexqa.plaza-network.com.pfx\",\"CertificatePassWord\":\"Pl@z@1012\",\"UsageApprovalsUrl\":\"https://api.qa2s.americanexpress.com/feebasedsrvcs/v2/benefits/benefit_families/47d79d0d-87c6-4773-a2d0-1440988f6ca2/usage_approvals\",\"UsagesUrl\":\"https://api.qa2s.americanexpress.com/feebasedsrvcs/v2/benefits/usages\"}"
+	},{
+		"ServiceCode": "CapitalOne",
+		"SettingType": "Token",
+		"SettingValue": "{\"access_token\":\"eyJ0diI6MiwicGNrIjoxLCJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoicjRxIn0..6XTuv1ACVjonX-fG0wP21g.0Oc3cHLz1dWA88rcK1xuobMDUIvF089350PoSxDHttVC49LKd8ZCAGa_n4pEsHSmpxY8BTl2bNLVk0n8l8Eb1MtjQdE_2YNHhj0dlcOiqo16HONx7ZgMBGuYmgDro9lpYTIFnnJoDFTm_yk8Bo8OmTK4jjFUrBIz5weaepkix6GI6edIsbnSiWk8o8S0ATXz0VJwDnPiUxjKzgpEjBwu5qM5fLpGQiFQ-pniL8PZn_1ilBKykiFve4oyrNWarjUNWToMqUATvGTVLntmUcCnrA.9jto-ZOz30plKvKOMCZb4w\",\"token_type\":\"Bearer\",\"expires_in\":1296000,\"issued_at\":1618816252} "
+	},{
+		"ServiceCode": "CapitalOne",
+		"SettingType": "PublicKey",
+		"SettingValue": "{\"keys\":[{\"kid\":\"29a7d5a5-001f-46da-ad63-987745cad4ff\",\"kty\":\"RSA\",\"alg\":\"RSA-OAEP\",\"n\":\"hLfM3cbmfJ7M8UlNL7nFyjkf7XZnoh63HkpgYtiKPStYQH06kt5Po0tImgTtJAkBsgLVaQ1B-48qg1_1hvUBdyKCvTH2TuHNoxbsvq-1syxagEi_a8JKLIAZcugrtN4Qeb9uXI6gos6CAs6kMT7sxbnHdp3OktU22mPZr2EhVsf581REPbwX3b0A9-p5vVp_vRZlWwVkCpLRAku1wamqfxUsVn4_A-IQzrEluKdNTjxmkb0jtUF8aFFnaQeBvOKsSxbZVy6iucK5aT4QxnmxSYZqQAnE0htysWN_JQu_ibaJIW2MEzH59LGK5LYSDfIdSLJlv4FFtaMcaZBZZNg2ZgJ3qWBOLdLL7VF8X6NPlXdOyef-Ty8XPoYA0dzaIEMb5VHuss5dNEogN3aFlXv5lIAqnmK31gphfRpHVrP-zd4pzDnW6XTvEYs647vgqngd6RELds5DbK50xeBc7jAPPXhcxVdPDiv-h0gDs_kv-oeLDud39smPYlquWe4LXGOe6NG745QE0uWMyOV9pJn15jeK2YvyN-gyOjmU425J97ER6N_Zfm70Hw4kemUYXUQJZuEGVHK3v6ZSIX79aQSMkRl8UH3vv4n4Yun1WTeD37Q5aC96QjRTzrtyyr0jFzVv6x384j6PqzLAXG8j5--wfuN9ovj4BNLk8sdfLWyDFkc\",\"use\":\"enc\",\"exp\":1627933824,\"e\":\"AQAB\",\"productId\":\"lounge-eligibility-ppg-rsa\"}]} "
+	},{
+		"ServiceCode": "Yuetu",
+		"SettingType": "Config",
+		"SettingValue": "{\"supplierCode\":\"E00359IG0000\",\"commodityCode\":\"E00K1MH80000\", \"RequestAddress\":\"https://api.qa.yuetu.tech\",\"AccessToken\":\"LrjW4RJdSOtpgEcO7Z7OHHMnKSOV8uSuMthsnj4U6R0=\",\"PublicKey\":\"MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC+iCD5tiNYHpCu6jLxHMvJGllHUAw+rlyf2LGv8lvUNdtD4cVMDSfgnURiToaKHKb6Aj5VuJ84RfiOi7P1jebXWJMK3jvUtTGJviC78BSCrGZprQ/TmUg5lCz/xGExjEPvqq2ehQz+gQDxXntZjiBq4t9ONLC4coVpOVBcbcxo6eP04B0B1mKhzgEtFWI1Sz8jxGQDWqHssshBQ0TkFG4nfjNJ2hMMcS8NOrFCtuSWM2kfuf2MUJe672gBcYYqbQb/awpW6bYCXYz5al2iUo81sKYIX14Mq2DohWA6L5h9yj+J4+C7UVeP/wQoc3bUGDpYGUiKuSRnNN7a6BarUBbPAgMBAAECggEAR9IInBiMOitLXqPpj/nK14OXI8qI0xfm0lpcoHY7J0Ml4/C27nQHFCQ0Itp23JjwWE2AMc/mNNArYZBHxcg3u/UneHFNHGEwyztgG3fkQ125PRx/WsPs9cdlLwRXntXAxhcQWzDMNSNrt5Bl7twkXCYpBtHVy7FfmMqCAFVjOChK08yUP3FZVzbyjQe4yOwZv6PP8Yu3/ikBCWD//0Syw7pRKyFbx5WYYyiI5F8X6w9T9VZj9gNU+1gyLIEk5vLQw625ueFDfZcmjMh2c2jJBcwkHKhU9E3K607aoHduFCPFNFz9T7zBskNrGHt1FgZTuyHFxx7j2v/qmcksSYZsAQKBgQD1n4W1Zl1CXo35yE6jUxVudWFvSzx0KlGGu0Ll73DnhPeETVheV8iQHAwQAsY3ECI/4r7HMGvpdbCThD12h2tMVaSibZsLmPNAS9a4wOoKeCrjc5N/jTtNLyVoi4qPXsmB85CJPfD07r8IKZOLwwMt6QxYeyarSjsD7y28KDMmWwKBgQDGlMdrdkZ3DgY6a3fDWohbgKZxLovXcHZ8sMHuidAbG21D0jNgDa5CKt9ASXlWiaO9v9vHeVSmU14xSkR2BOqaQ6fszn/FSKRJpx7imh7wXHljUa7WPhU5mUYKbMyteldb2EreUlRETE5FUrQBb05QusP5ldMFxw0HwL7u4MODnQKBgQDqjU4Kvti5wz+C0oQ9tN5XX+IOfGMbbznxFiu5FWDUxYXzokSLuvo8m3vtYijUdiSuqyGRZyz1gLyA8hwbbw/IklQoA9C2T3Wi5YkDXr1gCAa0sy6b9Es31pi7b91+MX7uCJ/yXuMVklN8QO+z3CLSGaT/bYKsubMHe8RJ1H2b1wKBgQCD63hjIkqDcrSegKAqDe2B5AAuNj6+Gz8LbJ0Yq0Ktj1XR9UUd7VizKinvWiAaZgt51Yfahva+G6n6Up0STgfP/VwEC9aDp9ND/pqc7Mfa44Pcf/oG521QO0t1R3vdTuXT5OcvtD+4s3xXvy5HubqsFLZ2CpsKPoagfOIabQRVXQKBgBlrzkLpixLWB5ZsZ6CD51I7z0ZheCL1+0aPX2Qa9yv6k8I1an4Nalk6TY0j2XNZXE2eq7U9d/kfzfgVRjhx8CZOoTxV6ieD1+bc//xj4+z8Zbh8ViWWlKjwIT/mSTw6MmgxNsetWdjS9IDcRwSXEpioTrT8wt8fDBDnFS21GCT+\",\"QueryRightUrl\":\"/desk/reception/supplier/rights\",\"CancelUrl\":\"/desk/reception/supplier/rights/check\"}"
+	},{
+		"ServiceCode": "EBridge",
+		"SettingType": "Config",
+		"SettingValue": "{\"user_id\":\"plazapremium\",\"password\":\"3xxdev89uuu^\",\"useUrl\":\"https://dev-api.theloungemembers.com/api/v2/coupon/use\",\"cancelUrl\":\"https://dev-api.theloungemembers.com/api/v2/coupon/cancel\",\"infoUrl\":\"https://dev-api.theloungemembers.com/api/v2/coupon/info\"}"
+	},{
+		"ServiceCode": "DragonPass",
+		"SettingType": "Config",
+		"SettingValue": "{\"Url\":\"http://interfacetest.dragonpass.com.cn:8664/extinf/ws/services/\",\"ver\":\"1.0\",\"privateKey\":\"MCwCFD0zwdmA47L63RaVKNfVgYP0HkAhQqzpAwdA0wrS5nCDxTiu1pymQ0CFdaAqC99GJND6NAKZe5J2GIEY0KAUAlox9qYInmG193v5U6smFq6VIwCFCLJQJ0HZkdHWpqn8pqRzba1zCTAhRg9RzFV2u4eyiP209lVDv28QwCFCxEiX5e65H2Z2BKnybXuNGx7M4AhRL3L6mApWMHjtdmg3Nqysq3zrhAwCFGblBYAQpjOVHoeIF3JADN1jUFBAhRmXaLDwsafZ0JlWIFCPX628GmnAgwCFGClbFmQnTAP4j7SoMon6mSy4ev5AhRn7mNpBd2xs6IhsX4ZMmyL7G9JZg4CFQCBK5V7qyZpGMkNjq91FApd5qcQIVAI3az6jYTv5YPqMqXUGUInHqfsjwCFH9LdfVtsvfXjb2fLSJT0AmLLBBAhQ9XOhocJ9h94mbbOa68uhznLTmoQwCFC1Qk8RzXVFyf8E2IIUX4TayVZgkAhQ3AkQLHcYGBAS96te3MIk82tckDwwCFHnSHVdCb6ViMrXnVi9aRuRZajyZAhQAE6laNozVRCq0BDWx3vDJC1zbwwCFFRqHHiiHSasikDKsAn62RA5bwCeAhR9zoLyXGqWVUieg5EGDjQhRpf2gwCFC3NZnLSW3vYL3KIffYd0QFGid49AhQtvysjIQMx87gAO7SClQSiDWI8A0CFBIVKINMORAGwpTEAZkLGgromsPpAhUAgfA3zUcmEjWxGKKLH9LV3b1iQwCFCvQl8NkT0tf1h8qa0WnRNOenAhRgGDCmH2RnzjCHE3Hmkv9tTbtJag0CFFD3qfhqXuMGMSBXUdQraHD2CcBAhUAkXHF0dGxQHgPLYWKj3FlD8UVoyk0CFQCXARhEUHSyZW2VmfG0jx5If50PwIUHmGUAgji5k9Vf8ETa9QLnSmTCYwCFFbJTTtp5nInqzUSiMBz2VfjLvDnAhRzHYyQ3qVTXKIy6NCSKyTq6qgGK1Lxni1jAf3L9GQ\",\"agentid\":\"6879\",\"channel\":\"000004\",}"
+	},{
+		"ServiceCode": "DragonPassLounge",
+		"SettingType": "Config",
+		"SettingValue": "{\"Url\":\"http://interfacetest.dragonpass.com.cn:8664/extinf/ws/services/\",\"ver\":\"1.0\",\"privateKey\":\"MCwCFD0zwdmA47L63RaVKNfVgYP0HkAhQqzpAwdA0wrS5nCDxTiu1pymQ0CFdaAqC99GJND6NAKZe5J2GIEY0KAUAlox9qYInmG193v5U6smFq6VIwCFCLJQJ0HZkdHWpqn8pqRzba1zCTAhRg9RzFV2u4eyiP209lVDv28QwCFCxEiX5e65H2Z2BKnybXuNGx7M4AhRL3L6mApWMHjtdmg3Nqysq3zrhAwCFGblBYAQpjOVHoeIF3JADN1jUFBAhRmXaLDwsafZ0JlWIFCPX628GmnAgwCFGClbFmQnTAP4j7SoMon6mSy4ev5AhRn7mNpBd2xs6IhsX4ZMmyL7G9JZg4CFQCBK5V7qyZpGMkNjq91FApd5qcQIVAI3az6jYTv5YPqMqXUGUInHqfsjwCFH9LdfVtsvfXjb2fLSJT0AmLLBBAhQ9XOhocJ9h94mbbOa68uhznLTmoQwCFC1Qk8RzXVFyf8E2IIUX4TayVZgkAhQ3AkQLHcYGBAS96te3MIk82tckDwwCFHnSHVdCb6ViMrXnVi9aRuRZajyZAhQAE6laNozVRCq0BDWx3vDJC1zbwwCFFRqHHiiHSasikDKsAn62RA5bwCeAhR9zoLyXGqWVUieg5EGDjQhRpf2gwCFC3NZnLSW3vYL3KIffYd0QFGid49AhQtvysjIQMx87gAO7SClQSiDWI8A0CFBIVKINMORAGwpTEAZkLGgromsPpAhUAgfA3zUcmEjWxGKKLH9LV3b1iQwCFCvQl8NkT0tf1h8qa0WnRNOenAhRgGDCmH2RnzjCHE3Hmkv9tTbtJag0CFFD3qfhqXuMGMSBXUdQraHD2CcBAhUAkXHF0dGxQHgPLYWKj3FlD8UVoyk0CFQCXARhEUHSyZW2VmfG0jx5If50PwIUHmGUAgji5k9Vf8ETa9QLnSmTCYwCFFbJTTtp5nInqzUSiMBz2VfjLvDnAhRzHYyQ3qVTXKIy6NCSKyTq6qgGK1Lxni1jAf3L9GQ\",\"agentid\":\"6879\",\"channel\":\"000004\",}"
+	},{
+		"ServiceCode": "DragonPassVisa",
+		"SettingType": "Config",
+		"SettingValue": "{\"Url\":\"https://interface-test.dragonpass.com.cn/extinf/ws/services/\",\"ver\":\"1.0\",\"privateKey\":\"MCwCFD0zwdmA47L63RaVKNfVgYP0HkAhQqzpAwdA0wrS5nCDxTiu1pymQ0CFdaAqC99GJND6NAKZe5J2GIEY0KAUAlox9qYInmG193v5U6smFq6VIwCFCLJQJ0HZkdHWpqn8pqRzba1zCTAhRg9RzFV2u4eyiP209lVDv28QwCFCxEiX5e65H2Z2BKnybXuNGx7M4AhRL3L6mApWMHjtdmg3Nqysq3zrhAwCFGblBYAQpjOVHoeIF3JADN1jUFBAhRmXaLDwsafZ0JlWIFCPX628GmnAgwCFGClbFmQnTAP4j7SoMon6mSy4ev5AhRn7mNpBd2xs6IhsX4ZMmyL7G9JZg4CFQCBK5V7qyZpGMkNjq91FApd5qcQIVAI3az6jYTv5YPqMqXUGUInHqfsjwCFH9LdfVtsvfXjb2fLSJT0AmLLBBAhQ9XOhocJ9h94mbbOa68uhznLTmoQwCFC1Qk8RzXVFyf8E2IIUX4TayVZgkAhQ3AkQLHcYGBAS96te3MIk82tckDwwCFHnSHVdCb6ViMrXnVi9aRuRZajyZAhQAE6laNozVRCq0BDWx3vDJC1zbwwCFFRqHHiiHSasikDKsAn62RA5bwCeAhR9zoLyXGqWVUieg5EGDjQhRpf2gwCFC3NZnLSW3vYL3KIffYd0QFGid49AhQtvysjIQMx87gAO7SClQSiDWI8A0CFBIVKINMORAGwpTEAZkLGgromsPpAhUAgfA3zUcmEjWxGKKLH9LV3b1iQwCFCvQl8NkT0tf1h8qa0WnRNOenAhRgGDCmH2RnzjCHE3Hmkv9tTbtJag0CFFD3qfhqXuMGMSBXUdQraHD2CcBAhUAkXHF0dGxQHgPLYWKj3FlD8UVoyk0CFQCXARhEUHSyZW2VmfG0jx5If50PwIUHmGUAgji5k9Vf8ETa9QLnSmTCYwCFFbJTTtp5nInqzUSiMBz2VfjLvDnAhRzHYyQ3qVTXKIy6NCSKyTq6qgGK1Lxni1jAf3L9GQ\",\"agentid\":\"6879\",\"channel\":\"000004\"}"
+	},{
+		"ServiceCode": "TianYiHui",
+		"SettingType": "Config",
+		"SettingValue": "{\"RequestAddress\":\"http://106.14.30.222:6060/admin/pos/\",\"RSAPrivateKey\":\"MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAOa135FgGuHZGPA5yl6rl/ovBKws/thS GRjvV/DoYBlvFUlE1HH3p1ZfWshkjITIh52AmTJ0IZFwt3Xtxn9lS6k4CWpLitHZ18vpzYo8vdyPq3VT 2o3S/wzNcP6MZzW8TzNwmzDLwT4laa9rK2B0rOL12XxPgzMFVp2xeU96J2yJAgMBAAECgYAn/Z6jNGV0 gI0yFtJdVqEhXMUSkzoZhSGUkOhNefoubnLiIGwy1RrMffregY9Z9OiNBJ2JgVfQPhmO94hQzN4wQpPI jRNFqC2TIAn/CtC0MyuzkNjb4R48Hs86AVMVn1yHzxiSmOND96GuIjL+hJ7D3WZkkc6w7YLWAWVdUNhX gQJBAP0oGDeLwNEOuOI1WMQ/ZlDqlyDc9tdlQXnJLk29KBnWNxHkfi1+w93ofBFfz4SYw5GlWtfp8n3O tLgWbxQh+fcCQQDpTT0lZcP57fUoHC4d/5DW6dIEjvh4fQLrjrxmwJy5I7s04TS/qPLSjg0LKr0dkiDr i1e6OrkLDT1AKTcnhC1/AkB+zeWLdSIo1WIAVM5YxpT+dPMsT+IItDxev0nFQLlkb6t39+bH7RY5Aimb Hk240jgrrRLa0eFX6QEWsI4FHJuzAkEAmNli2zKOMBunx6yWxk6e3T75usTUo1P76spsQsGkrGNtjlqR zZPp6uroPs20c0A+0zNKuZcpjsUQwQ1/tiMSDwJBAJwD+LrD+fC7cJr5PCnFQ9BopOub4sILQKXKQRY9 epHgGi5JGiZfiU/U7Nqe70QvjH2xKFr5IH3jp1lt/LPX5PQ=\",\"RSAPublickey\":\"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDmtd+RYBrh2RjwOcpeq5f6LwSsLP7YUhkY71fw6GAZ bxVJRNRx96dWX1rIZIyEyIedgJkydCGRcLd17cZ/ZUupOAlqS4rR2dfL6c2KPL3cj6t1U9qN0v8MzXD+ jGc1vE8zcJswy8E+JWmvaytgdKzi9dl8T4MzBVadsXlPeidsiQIDAQAB\",\"AESKey\":\"7yJL9p8eUu7gPhDP\",\"AesIV\":\"0102030405060708\",\"appUserNo\":\"pos123\",\"key\":\"223cc0b16d858e67f9f83d71b745dae0\"}"
+	},{
+		"ServiceCode": "DragonPassPayment",
+		"SettingType": "Config",
+		"SettingValue": "{\"appid\":\"dpc-api-test\",\"secretKey\":\"f1f413f70f9742e1ac302824780baf2d\",\"salt\":\"aaaa3333####!!@@\",\"aesIV\":\"7777999922224123\",\"RequestAddress\":\"https://glas-test.dragonpass.com.cn/dpc-api/\",\"AuthUrl\":\"global-lounge/auth/auth-api\",\"GetProgramInfoUrl\":\"global-lounge/search/get-program\",\"BenefitPostUrl\":\"global-lounge/search/benefit-post\",\"OrderUrl\":\"global-lounge/order/order\",\"CancelUrl\":\"global-lounge/order/cancel\",\"PaymentUrl\":\"global-lounge/order/payment\"}"
+	},{
+		"ServiceCode": "DragonPassPayment",
+		"SettingType": "PublicKey",
+		"SettingValue": "{\"authToken\":\"8311c57dfdc040c18b155104d8a1c257\",\"publicKey\":\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEBJrgZIFALqOMhjgKlCF3snyeiEfrbOLbQSBIrf/HjR5W7EVP+lPZ1blUO+Wj0EO3zYgJqBki/PN8uzC0qggEEKzgACxL1nCcIZ6AmW8XHzloGPYEEHLWiJOZkkCBVJXBP/jVxz78BKk32Tnq930Q9wY2cgv9YnOBB5Oh7D8lOFnM35YlnNwLKnofjAs8lsSXXY7IESR0ULaF1EMghWzbaYQ9yT42nDJFrrI9W1vhjPJ/jDd+LqPUqEs+eeYc9alrFVrCQyVZib6+36cHO5xmA3LaTPLw/W/H9RQWL0ocNj/rNhxaHG32Qb7lXwzE6pJsJHYI9xJ6W6MJj2ROOMc1w6QIDAQAB\",\"expireDate\":\"2022-04-25T08:13:25.2200906Z\"}"
+	},{
+		"ServiceCode": "Ctrip",
+		"SettingType": "Config",
+		"SettingValue": "{\"url\":\"http://gateway.fat.ctripqa.com/Flight.Order.SupplierOpenAPI/AirportLoungesProcess.asmx\",\"userName\":\"ypcao\",\"userPassword\":\"DF6B369D981E6F39393255E6ECE51D72\",\"FlightAgency\":129,\"ProductType\":5}"
+	},{
+		"ServiceCode": "CMB",
+		"SettingType": "Config",
+		"SettingValue": "{\"ShenzhenUrl\":\"http://172.16.102.43:8081/CRN4/json\",\"ShanghaiUrl\":\"http://172.16.102.44:8081/CRN4/json\",\"EtyMod\":\"022\"}"
+	}
+]

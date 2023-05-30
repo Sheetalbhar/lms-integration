@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.trangile.lms.integration.model.User;
 
+
 public interface UserService {
 	
 	HashMap<String, Object> validateUser(User user);

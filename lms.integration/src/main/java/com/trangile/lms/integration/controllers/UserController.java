@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
-	UserService userService;
+	private UserService userService;
 	
 	//get all users 
 		@GetMapping("/all")

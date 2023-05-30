@@ -2,8 +2,8 @@ package com.trangile.lms.integration.service;
 
 import java.util.HashMap;
 import org.springframework.stereotype.Service;
-import com.trangile.lms.integration.api.ResponseCode;
 import com.trangile.lms.integration.model.User;
+import com.trangile.lms.integration.property.ResponseCode;
 import lombok.extern.slf4j.Slf4j;
 import software.amazon.awssdk.http.HttpStatusCode;
 import software.amazon.awssdk.regions.Region;

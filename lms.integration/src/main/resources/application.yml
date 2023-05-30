@@ -1,5 +1,5 @@
 server:
-  port: 4200
+  port: 8081
 aws:
   accessKeyId: AKIAQWL66MWUJ3YLBAUO
   secretAccessKey: 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

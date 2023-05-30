@@ -15,7 +15,7 @@ import com.trangile.lms.integration.service.UserService;
 @Service
 public class UserServiceImpl implements UserService{
 	@Autowired
-	CognitoHelper cognitoHelper;
+	private CognitoHelper cognitoHelper;
 	
 	List<User> userList = new ArrayList<User>();
 	

@@ -1,0 +1,14 @@
+[{
+		"ServiceCode": "CapitalOne",
+		"SettingType": "Token",
+		"SettingValue": "{\"access_token\":\"eyJ0diI6MiwicGNrIjoxLCJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoicjRxIn0..6XTuv1ACVjonX-fG0wP21g.0Oc3cHLz1dWA88rcK1xuobMDUIvF089350PoSxDHttVC49LKd8ZCAGa_n4pEsHSmpxY8BTl2bNLVk0n8l8Eb1MtjQdE_2YNHhj0dlcOiqo16HONx7ZgMBGuYmgDro9lpYTIFnnJoDFTm_yk8Bo8OmTK4jjFUrBIz5weaepkix6GI6edIsbnSiWk8o8S0ATXz0VJwDnPiUxjKzgpEjBwu5qM5fLpGQiFQ-pniL8PZn_1ilBKykiFve4oyrNWarjUNWToMqUATvGTVLntmUcCnrA.9jto-ZOz30plKvKOMCZb4w\",\"token_type\":\"Bearer\",\"expires_in\":1296000,\"issued_at\":1618816252} "
+	},{
+		"ServiceCode": "CapitalOne",
+		"SettingType": "PublicKey",
+		"SettingValue": "{\"keys\":[{\"kid\":\"29a7d5a5-001f-46da-ad63-987745cad4ff\",\"kty\":\"RSA\",\"alg\":\"RSA-OAEP\",\"n\":\"hLfM3cbmfJ7M8UlNL7nFyjkf7XZnoh63HkpgYtiKPStYQH06kt5Po0tImgTtJAkBsgLVaQ1B-48qg1_1hvUBdyKCvTH2TuHNoxbsvq-1syxagEi_a8JKLIAZcugrtN4Qeb9uXI6gos6CAs6kMT7sxbnHdp3OktU22mPZr2EhVsf581REPbwX3b0A9-p5vVp_vRZlWwVkCpLRAku1wamqfxUsVn4_A-IQzrEluKdNTjxmkb0jtUF8aFFnaQeBvOKsSxbZVy6iucK5aT4QxnmxSYZqQAnE0htysWN_JQu_ibaJIW2MEzH59LGK5LYSDfIdSLJlv4FFtaMcaZBZZNg2ZgJ3qWBOLdLL7VF8X6NPlXdOyef-Ty8XPoYA0dzaIEMb5VHuss5dNEogN3aFlXv5lIAqnmK31gphfRpHVrP-zd4pzDnW6XTvEYs647vgqngd6RELds5DbK50xeBc7jAPPXhcxVdPDiv-h0gDs_kv-oeLDud39smPYlquWe4LXGOe6NG745QE0uWMyOV9pJn15jeK2YvyN-gyOjmU425J97ER6N_Zfm70Hw4kemUYXUQJZuEGVHK3v6ZSIX79aQSMkRl8UH3vv4n4Yun1WTeD37Q5aC96QjRTzrtyyr0jFzVv6x384j6PqzLAXG8j5--wfuN9ovj4BNLk8sdfLWyDFkc\",\"use\":\"enc\",\"exp\":1627933824,\"e\":\"AQAB\",\"productId\":\"lounge-eligibility-ppg-rsa\"}]} "
+	},{
+		"ServiceCode": "CapitalOne",
+		"SettingType": "Config",
+		"SettingValue": "{\"client_id\": \"bb07ecc6633d426693b0a159f51159db\",\"client_secret\": \"d33cca59d523429f1166bb3d72674410\",\"grant_type\": \"client_credentials\"}"
+	}
+]
