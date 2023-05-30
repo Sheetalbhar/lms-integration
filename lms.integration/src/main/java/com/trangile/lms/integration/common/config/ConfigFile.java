@@ -27,12 +27,12 @@ import com.trangile.lms.integration.model.TokenResponse;
 
 @Component
 public class ConfigFile {
-
+	final String corporateSettingFilepath = "ThirdPartyAPILog/corporateSetting.json";
 
 	public String readCorporateSetting(String serviceCode, String serviceType){
 		try {
-		ClassLoader classLoader = Application.class.getClassLoader();
-		File file = new File(classLoader.getResource("CorporateSetting.json").getFile());
+	//	ClassLoader classLoader = Application.class.getClassLoader();
+		File file = new File(corporateSettingFilepath);
 	    JSONParser jsonParser = new JSONParser();
 	    String settingValue = null;
 			
@@ -99,22 +99,67 @@ public class ConfigFile {
 		return null;
 	}
 	
-	public Object writeToCorporateSettings(String serviceCode, String settingType, TokenResponse tokenResponse) throws IOException{
+	public Object writeToCorporateSettings(String serviceCode, String settingType, TokenResponse tokenResponse) throws IOException, ParseException{
 		String tokenJson = JsonUtils.objectToJson(tokenResponse);
 		JSONObject corporateSettingJson = new JSONObject();
 		corporateSettingJson.put("ServiceCode", serviceCode);  
 		corporateSettingJson.put("SettingType", settingType);
 		corporateSettingJson.put("SettingValue", tokenJson);
-		Gson gson =new Gson();
+		CorporateSetting obj = new CorporateSetting();
+	    obj.setServiceCode(serviceCode);
+	    obj.setSettingType(settingType);
+	    obj.setSettingValue(tokenJson);
 		
 		try {
-			// Writing to a file  
 			ClassLoader classLoader = Application.class.getClassLoader();
-		//	File file = new File(classLoader.getResource("corporateSetting.json").getFile());
-			//File file = new File("ThirdPartyAPILog/corporateSetting.json");
-			FileWriter fileWriter = new FileWriter("ThirdPartyAPILog/corporateSetting.json"); 
-			fileWriter.append(corporateSettingJson.toString());
-			fileWriter.close();
+			File file = new File(corporateSettingFilepath);
+		    JSONParser jsonParser = new JSONParser();
+		    String settingValue = null;
+		    
+		        List<CorporateSetting> corporateSettingList;
+		        if(file.exists()) {
+					System.out.println("file exists-----------------------");
+					JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader(file));
+					System.out.println("jsonArray ====="+jsonArray.toJSONString());
+					corporateSettingList = new ArrayList<CorporateSetting>();
+					corporateSettingList = JsonUtils.parse2List(jsonArray.toString(), CorporateSetting.class);
+					System.out.println("corporateSetting==="+corporateSettingList);
+					//corporateSettingJson.containsKey("Token");
+				//	System.out.println("Contain token"+corporateSettingList.contains(tokenResponse));
+					
+					//corporateSettingList.add(obj);
+					
+					System.out.println("new corporateSettingList==="+corporateSettingList);
+					JSONArray jsonDataArray = new JSONArray();
+					for(CorporateSetting object:corporateSettingList) {
+						if(object.getSettingType().equals("Token")){
+							object.setServiceCode(serviceCode);
+							object.setSettingValue(tokenJson);
+							object.setSettingType(settingType);	
+						}
+							//else {
+//							jsonDataArray.add(obj.getJSONObject());
+//						}
+						jsonDataArray.add(object.getJSONObject());
+						
+					}
+					
+					 System.out.println("jsonDataArray======"+jsonDataArray);
+					 FileWriter fileWriter = new FileWriter(corporateSettingFilepath); 
+						//fileWriter.append(',');
+						fileWriter.append(jsonDataArray.toString());
+						fileWriter.close();
+					 
+					 
+		        }
+//			// Writing to a file  
+//			ClassLoader classLoader = Application.class.getClassLoader();
+//		//	File file = new File(classLoader.getResource("corporateSetting.json").getFile());
+//			//File file = new File("ThirdPartyAPILog/corporateSetting.json");
+//			FileWriter fileWriter = new FileWriter("ThirdPartyAPILog/corporateSetting.json",true); 
+//			fileWriter.append(',');
+//			fileWriter.append(corporateSettingJson.toString());
+//			fileWriter.close();
 			
 //			if(file.exists()) {
 //				//System.out.println("Writing JSON object to file-------------");

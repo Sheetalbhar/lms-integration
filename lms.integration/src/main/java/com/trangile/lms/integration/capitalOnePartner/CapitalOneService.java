@@ -1,6 +1,8 @@
 package com.trangile.lms.integration.capitalOnePartner;
 
 
+import java.text.ParseException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.trangile.lms.integration.api.BaseApi;
@@ -19,45 +21,54 @@ public class CapitalOneService implements BaseApi{
 	@Override
 	public Response Verify(VerifyRequest verifyRequest) {
 		Response response = new Response();
-        if ((verifyRequest.getCardNo() == null) || (verifyRequest.getLocationID()== null))
-        {
-            response.setMsg(Resource.ParameterError);
-            response.setResult(ResponseMsg.Fail);
-            return response;
-        }
-        else
-        {
-            String loungeID = capitaOneRepository.getLoungeID(verifyRequest.getLocationID());
-            
-            if (loungeID == null)
-            {
-                response.setMsg(Resource.ParameterError);
-                response.setResult(ResponseMsg.Fail);
-                return response;
-            }
-            String token= capitaOneRepository.getAccessToken();
-            if (token ==null)
-            {
-            	response.setMsg(Resource.ParameterError);
-                response.setResult(ResponseMsg.Fail);
-                return response;
-            }
-            String encryptionCardNo = capitaOneRepository.encryptionCardNo(verifyRequest.getCardNo(), token);
-            if (encryptionCardNo == null)
-            {
-            	response.setMsg(Resource.ParameterError);
-                response.setResult(ResponseMsg.Fail);
-                return response;
-            }
-            EligibilityResponse eligibilityResponse=capitaOneRepository.eligibility(token, encryptionCardNo, loungeID);
-            if (!eligibilityResponse.getIsEligible())
-            {
-                response.setMsg(eligibilityResponse.getIneligibleReasonMessage());
-                response.setResult(ResponseMsg.Fail);
-                return response;
-            }
-        }
-
+		try {
+			if ((verifyRequest.getCardNo() == null) || (verifyRequest.getLocationID()== null))
+	        {
+	            response.setMsg(Resource.ParameterError);
+	            response.setResult(ResponseMsg.Fail);
+	            return response;
+	        }
+	        else
+	        {
+	            String loungeID = capitaOneRepository.getLoungeID(verifyRequest.getLocationID());
+	            
+	            if (loungeID == null)
+	            {
+	                response.setMsg(Resource.ParameterError);
+	                response.setResult(ResponseMsg.Fail);
+	                return response;
+	            }
+	            String token= capitaOneRepository.getAccessToken();
+	            if (token ==null)
+	            {
+	            	response.setMsg(Resource.ParameterError);
+	                response.setResult(ResponseMsg.Fail);
+	                return response;
+	            }
+	            String encryptionCardNo = capitaOneRepository.encryptionCardNo(verifyRequest.getCardNo(), token);
+	            if (encryptionCardNo == null)
+	            {
+	            	response.setMsg(Resource.ParameterError);
+	                response.setResult(ResponseMsg.Fail);
+	                return response;
+	            }
+	            EligibilityResponse eligibilityResponse=capitaOneRepository.eligibility(token, encryptionCardNo, loungeID);
+	            if (!eligibilityResponse.getIsEligible())
+	            {
+	                response.setMsg(eligibilityResponse.getIneligibleReasonMessage());
+	                response.setResult(ResponseMsg.Fail);
+	                return response;
+	            }
+	        }
+			
+		}catch (ParseException pe) {
+			// TODO: handle exception
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+        
+		
         return response;
 	}
 

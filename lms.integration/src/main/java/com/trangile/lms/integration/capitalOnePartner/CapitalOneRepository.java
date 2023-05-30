@@ -4,6 +4,7 @@ import com.trangile.lms.integration.common.config.Config;
 import com.trangile.lms.integration.common.config.ConfigFile;
 import com.trangile.lms.integration.common.config.ServiceCodeType;
 import com.trangile.lms.integration.common.config.SettingType;
+import com.trangile.lms.integration.common.util.CommonDateUtil;
 import com.trangile.lms.integration.common.util.JsonUtils;
 import com.trangile.lms.integration.model.TokenRequest;
 import com.trangile.lms.integration.model.TokenResponse;
@@ -13,18 +14,22 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.net.ssl.HttpsURLConnection;
 
 import java.io.IOException;
-
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
+import org.apache.commons.lang3.time.DateUtils;
 import org.apache.http.client.ClientProtocolException;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -44,6 +49,9 @@ public class CapitalOneRepository {
 	@Resource
 	private ConfigFile configurationFile;
 	CapitalOneConfiguration capitalOneConfig;
+	
+	final SimpleDateFormat sdf = new SimpleDateFormat(CommonDateUtil.DATE_FORMAT_SEARCH);
+	
 
 	@PostConstruct
 	public void initiate() {
@@ -67,15 +75,16 @@ public class CapitalOneRepository {
 		return null;
 	}
 
-	public String getAccessToken() {
+	public String getAccessToken() throws ParseException {
 		String accesstoken;
 		String tokenString = corporateService.getCorporateSetting(ClientName, SettingType.Token);
 		System.out.println("tokenString==========" + tokenString);
 		TokenResponse tokenObj = new TokenResponse();
 		if (tokenString != null) {
 			tokenObj = converToken(tokenString);
-			// expiry date
-			if (true) {
+			Date issueDate = sdf.parse(tokenObj.getIssueDate());
+			Date expiryDate = DateUtils.addSeconds(issueDate, tokenObj.getExpires_in());
+			if(expiryDate.compareTo(issueDate)>0) {
 				if (capitalOneConfig != null) {
 					String gettokenString = getToken();
 					if (gettokenString != null) {
@@ -85,8 +94,8 @@ public class CapitalOneRepository {
 					}
 				} else
 					return null;
-
 			}
+			
 			return tokenObj.getToken_type() + " " + tokenObj.getAccess_token();
 		} else {
 			if (capitalOneConfig != null) {
@@ -188,17 +197,17 @@ public class CapitalOneRepository {
 
 	public TokenResponse getNewToken() {
 		TokenResponse tokenResponse = new TokenResponse();
-		TokenRequest tokenRequest = new TokenRequest("bb07ecc6633d426693b0a159f51159db",
-				"d33cca59d523429f1166bb3d72674410", "client_credentials");
+//		TokenRequest tokenRequest = new TokenRequest("bb07ecc6633d426693b0a159f51159db",
+//				"d33cca59d523429f1166bb3d72674410", "client_credentials");
 	       try {
 	    	   ///new code starts-----------
 	    	   String url = "https://api-it.capitalone.com/oauth2/token";
 	    	   URL obj = new URL(url);
 	    	   
 	    	   Map<String, String> params = new LinkedHashMap<>();
-	    	   params.put("client_id", "bb07ecc6633d426693b0a159f51159db");
-	    	   params.put("client_secret", "d33cca59d523429f1166bb3d72674410");
-	    	   params.put("grant_type", "client_credentials");
+	    	   params.put("client_id", capitalOneConfig.getClient_id());
+	    	   params.put("client_secret", capitalOneConfig.getClient_secret());
+	    	   params.put("grant_type", capitalOneConfig.getGrant_type());
 	    	   StringBuilder postData = new StringBuilder();
 	    	   for(Map.Entry<String, String> param : params.entrySet()) {
 	    		   if(postData.length() != 0) postData.append('&');
@@ -206,7 +215,7 @@ public class CapitalOneRepository {
 	   	        postData.append('=');
 	   	        postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));   
 	    	   }
-	    	   System.out.println("postData"+postData);
+	    	   System.out.println("postData-----"+postData);
 	    	   byte[] postDataBytes = postData.toString().getBytes("UTF-8");
 	    	   HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
 	    	   con.setRequestMethod("POST");
@@ -235,6 +244,14 @@ public class CapitalOneRepository {
 	    		    //print result
 	    		    System.out.println("Response----"+response.toString());
 	    		    tokenResponse= JsonUtils.jsonToObject(response.toString(), TokenResponse.class);
+	    		    Date currentTime = new Date();
+	    		    
+	    		    sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
+	    		    String issueDate = sdf.format(currentTime);
+	    		    tokenResponse.setIssueDate(issueDate);
+	    		    System.out.println("GMT time: " + issueDate);
+	    		 //   Date expiryDate = DateUtils.addSeconds((Date)issueDate, 1296000);
+	    		    
 	    		    System.out.println("tokenResponse----------"+tokenResponse);   
 	    			   }else {
 	    				   System.out.println("fail");

@@ -21,6 +21,8 @@ import lombok.NoArgsConstructor;
     
     @JsonProperty("access_token")
     private String access_token;
+    
+    private String issueDate;
 	
 
 }
